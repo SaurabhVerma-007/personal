@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cute Pastel Palette */
+  --background: 340 100% 98%;      /* Soft pink background */
+  --foreground: 345 40% 40%;       /* Darker pink/red for text */
+  
+  --primary: 340 85% 65%;          /* Hot pink */
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 330 60% 90%;        /* Soft pink */
+  --secondary-foreground: 345 50% 40%;
+  
+  --muted: 330 30% 95%;
+  --muted-foreground: 345 20% 60%;
+  
+  --accent: 350 90% 75%;           /* Reddish pink accent */
+  --accent-foreground: 345 50% 20%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  
+  --border: 340 30% 90%;
+  --input: 340 30% 90%;
+  --ring: 340 85% 65%;
+  
+  --radius: 1rem;
+  
+  /* Fonts */
+  --font-display: 'Pacifico', cursive;
+  --font-body: 'Quicksand', sans-serif;
+  --font-handwriting: 'Fredoka', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary selection:text-white overflow-x-hidden;
+    font-family: var(--font-body);
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(255, 192, 203, 0.4) 0%, transparent 20%),
+      radial-gradient(circle at 90% 80%, rgba(255, 182, 193, 0.4) 0%, transparent 20%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply text-foreground font-normal;
+  }
+}
+
+/* Custom kawaii animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.kawaii-shadow {
+  box-shadow: 4px 4px 0px rgba(236, 72, 153, 0.2);
+}
+
+.kawaii-card {
+  @apply bg-white/80 backdrop-blur-sm border-2 border-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300;
+  box-shadow: 0 10px 30px -10px rgba(255, 105, 180, 0.3);
+}
+
+.kawaii-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(255, 105, 180, 0.4);
+}
+html {
+  zoom: 0.9;
+}

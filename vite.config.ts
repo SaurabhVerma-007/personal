@@ -13,7 +13,7 @@ export default defineConfig({
     },
   },
 
-  base: "/Valentine/",
+  base: "/personal/",
 
   build: {
     outDir: "../dist",

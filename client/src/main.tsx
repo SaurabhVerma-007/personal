@@ -8,7 +8,7 @@ import { MusicProvider } from "./context/MusicContext";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <MusicProvider>
-      <Router base="/Valentine">
+      <Router base="/personal">
         <App />
       </Router>
     </MusicProvider>
